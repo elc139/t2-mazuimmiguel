@@ -36,5 +36,11 @@ Parte I: Pthreads
 3)
 
 4)
+|                        | 
+|------------------------| 
+| size,repetitions,usec  | 
+| 1,1000000,2000,5227948 | 
+| 2,500000,2000,2580534  | 
+
 
 5)A diferença principal entre os programas são essas linhas "pthread_mutex_lock (&mutexsum);" e "pthread_mutex_unlock (&mutexsum);". Elas fazem o controle da sincronia das threads, evitando o caso de condição de corrida, onde duas thread podem pegar o valor e sobreescrever o resultado da outra. Se for retirado essas linhas, a condição de corrida vai acontecer.
