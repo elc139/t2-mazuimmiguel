@@ -31,32 +31,32 @@ Parte I: Pthreads
    }
 ", onde é criado e destribuido as threads.
 
-2)Na teoria, deveria ser acelerado, pois com as threads é feito o processo em paralelo. Mas quando eu executei, com cada thread que se adicionava, o processo demorava cerca de meio segundo a mais (para o caso de 1000000 de tamanho com 2000 repetições).
+2)A aceleração foi grande, quase duplicando o desempenho e reduzindo o tempo pela metade.
 
 3 e 4) 
-O tempo diminui se caso reduzir o tamanho ou as repetições, porém tem perda de desempenho se caso aplicar mais threads.
-| threads | size    | repetitions | usec    | 
+A aceleração se sustenta em todos os casos, tanto para poucas repeticoes com tamanho reduzido e ainda mais para muitas repetiçóes.
+| threads | tamanho | repetições  | usec    | 
 |---------|---------|-------------|---------| 
 | 1       | 1000000 | 2000        | 5577281 | 
-| 2       | 1000000 | 2000        | 5610864 | 
-| 3       | 1000000 | 2000        | 5711905 | 
-| 4       | 1000000 | 2000        | 5677085 | 
-| 5       | 1000000 | 2000        | 6029346 | 
-| 6       | 1000000 | 2000        | 6265394 | 
-| 1       | 500000  | 2000        | 2799390 | 
-| 2       | 500000  | 2000        | 2820662 | 
-| 3       | 500000  | 2000        | 2811438 | 
-| 4       | 500000  | 2000        | 2853940 | 
-| 5       | 500000  | 2000        | 2885253 | 
-| 6       | 500000  | 2000        | 3052700 |
-| 1       | 500000  | 1000        | 1417319 | 
-| 2       | 500000  | 1000        | 1417995 | 
-| 3       | 500000  | 1000        | 1420447 | 
-| 4       | 500000  | 1000        | 1427474 | 
-| 5       | 500000  | 1000        | 1528584 | 
-| 6       | 500000  | 1000        | 1617952 | 
-
-
+| 2       | 500000  | 2000        | 2819439 | 
+| 4       | 250000  | 2000        | 1482222 | 
+| 6       | 166667  | 2000        | 1026981 | 
+| 1       | 6000000 | 2000        | 33640613| 
+| 2       | 3000000 | 2000        | 16912392| 
+| 4       | 1500000 | 2000        | 8784468 | 
+| 6       | 1000000 | 2000        | 6378443 |
+| 1       | 600000  | 1000        | 1694027 | 
+| 2       | 300000  | 1000        | 849157  | 
+| 4       | 150000  | 1000        | 430100  | 
+| 6       | 100000  | 1000        | 312729  | 
+| 1       | 6000000 | 4000        | 67352580 | 
+| 2       | 3000000 | 4000        | 33648448 | 
+| 4       | 1500000 | 4000        | 17397380 | 
+| 6       | 1000000 | 4000        | 12884853 | 
+| 1       | 6000    | 1000000     | 16737025 | 
+| 2       | 3000    | 1000000     | 8360447 | 
+| 4       | 1500    | 1000000     | 4258185 | 
+| 6       | 1000    | 1000000     | 3050845 | 
 
 5)A diferença principal entre os programas são essas linhas "pthread_mutex_lock (&mutexsum);" e "pthread_mutex_unlock (&mutexsum);". Elas fazem o controle da sincronia das threads, evitando o caso de condição de corrida, onde duas thread podem pegar o valor e sobreescrever o resultado da outra. Se for retirado essas linhas, a condição de corrida vai acontecer.
 
