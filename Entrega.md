@@ -34,7 +34,7 @@ Parte I: Pthreads
 2)A aceleração foi grande, quase duplicando o desempenho e reduzindo o tempo pela metade.
 
 3 e 4) 
-Tem uma grande aceleração por adicionar mais threads, mas pelo que testei, é eficiente somente para casos que não sejam grandes.
+Tem uma grande aceleração por adicionar mais threads, mas pelo que testei, é eficiente somente para casos que não sejam grandes. Para os casos com grandes quantidade de calculos, depois de adicionar um certo valor de threads a eficiência começa a cair.
 | tool     | nthreads  | size    | repetitions  | usec     | speedup |
 |----------|-----------|---------|--------------|----------|---------|
 | Pthreads | 1         | 1000000 | 2000         | 5621072  | 0,0000  |
