@@ -60,7 +60,7 @@ A aceleração se sustenta em todos os casos, tanto para poucas repeticoes com t
 
 E o grafico de speedup, onde cada série de teste mostrou um padrão, onde o desempenho quase duplicava com a adição de novas threads.
 
- <img src="speedup.jpg">
+ <img src="speedup.png">
 
 5)A diferença principal entre os programas são essas linhas "pthread_mutex_lock (&mutexsum);" e "pthread_mutex_unlock (&mutexsum);". Elas fazem o controle da sincronia das threads, evitando o caso de condição de corrida, onde duas thread podem pegar o valor e sobreescrever o resultado da outra. Se for retirado essas linhas, a condição de corrida vai acontecer.
 
