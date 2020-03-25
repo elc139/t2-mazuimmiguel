@@ -81,9 +81,12 @@ E o grafico de speedup:
 
 Parte 2: OpenMP
 
-1)O programa esta se chama openmp_dotprod.c, fiz baseado em seu programa de pthreads.
+1)O programa se chama openmp_dotprod.c, fiz baseado em seu programa de pthreads.
+
 Ele compila por este comando: gcc -fopenmp -o openmp_dotprod openmp_dotprod.c
+
 E para executar deve se utilizar ./openmp_dotprod Número de threads Valor de vetor Repetições
+
 Exemplo: ./pthreads_dotprod 1 1000000 2000
 
 2)
