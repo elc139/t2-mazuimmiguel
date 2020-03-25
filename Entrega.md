@@ -77,7 +77,7 @@ E o grafico de speedup:
 
 Ele demonstra a quantas vezes o programa fica mais rapido com aquele número de threads e cada série mostra os resultados da tabela, seguindo a ordem dela. 
 
- <img src="speedup_pthreads.jng">
+ <img src="speedup_pthreads.png">
 
 5)A diferença principal entre os programas são essas linhas "pthread_mutex_lock (&mutexsum);" e "pthread_mutex_unlock (&mutexsum);". Elas fazem o controle da sincronia das threads, evitando o caso de condição de corrida, onde duas thread podem pegar o valor e sobreescrever o resultado da outra. Se for retirado essas linhas, a condição de corrida vai acontecer.
 
@@ -137,5 +137,4 @@ Gráfico de aceleração:
 
 Ele demonstra a quantas vezes o programa fica mais rapido com aquele número de threads e cada série mostra os resultados da tabela, seguindo a ordem dela.
 
- <img src="speedup_openmp.jng">
-
+<img src="speedup_openmp.png">
