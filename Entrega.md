@@ -75,12 +75,15 @@ Tem uma grande aceleração por adicionar mais threads, mas pelo que testei, é 
 
 E o grafico de speedup:
 
- <img src="speedup.png">
+ <img src="speedup_pthreads.jpg">
 
 5)A diferença principal entre os programas são essas linhas "pthread_mutex_lock (&mutexsum);" e "pthread_mutex_unlock (&mutexsum);". Elas fazem o controle da sincronia das threads, evitando o caso de condição de corrida, onde duas thread podem pegar o valor e sobreescrever o resultado da outra. Se for retirado essas linhas, a condição de corrida vai acontecer.
 
 Parte 2: OpenMP
 
-1)
+1)O programa esta se chama openmp_dotprod.c, fiz baseado em seu programa de pthreads.
+Ele compila por este comando: gcc -fopenmp -o openmp_dotprod openmp_dotprod.c
+E para executar deve se utilizar ./openmp_dotprod Número de threads Valor de vetor Repetições
+Exemplo: ./pthreads_dotprod 1 1000000 2000
 
 2)
