@@ -1,0 +1,3 @@
+Processador: Ryzen 5 3600
+Memória: 16 GB
+SO: Ubuntu 18.04 LTS (Subsistema Linux no Windows)
